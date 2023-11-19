@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/ltx/nmea_network/ros_nmea_driver-master/install/setup.sh

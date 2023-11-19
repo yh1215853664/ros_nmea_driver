@@ -1,0 +1,19 @@
+<launch>
+    <!-- serial/tcp_client -->
+    <arg name="connect_mode" default="tcp_client" />
+    
+    <arg name="port" default="/dev/ttyUSB2" />
+    <arg name="baud" default="115200" />
+
+    <arg name="tc_ip" default="192.168.1.12" />
+    <arg name="tc_port" default="8888" />
+
+    <node name="ros_nmea_driver_node" pkg = "ros_nmea_driver" output="screen" type = "ros_nmea_driver_node" respawn="true">
+        <param name="connect_mode" value="$(arg connect_mode)" />
+        <param name="port" value="$(arg port)" />
+        <param name="baud" value="$(arg baud)" />
+        <param name="tc_ip" value="$(arg tc_ip)" />
+        <param name="tc_port" value="$(arg tc_port)" />
+    </node>
+
+</launch>
